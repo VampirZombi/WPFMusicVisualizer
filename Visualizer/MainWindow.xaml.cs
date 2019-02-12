@@ -20,9 +20,19 @@ namespace Visualizer
     /// </summary>
     public partial class MainWindow : Window
     {
+        MediaPlayer soundTrack;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnOpenSound_Click(object sender, RoutedEventArgs e)
+        {
+            soundTrack = new MediaPlayer();
+            Uri uri = new Uri(@"C:\Users\Pénzesné Tóth Márta\Downloads\SugarCoatedShit.wav");
+            soundTrack.Open(uri);
+            soundTrack.Play();
         }
     }
 }
